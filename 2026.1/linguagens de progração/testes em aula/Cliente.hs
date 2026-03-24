@@ -1,5 +1,3 @@
---aula 180326
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
 module Cliente where 
 
 data Cliente = OrgGov String
