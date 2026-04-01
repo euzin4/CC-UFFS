@@ -1,1 +1,45 @@
+obs: as questoes podem estar em ordem diferente
+-parte 1:
 
+1- (questao com foldr)
+r:a)-2
+foldr (-) 0 [1,2,3,4] -- 1-(2-(3-(4-0))) =-2
+                                  4
+                               -1
+                            3
+                         -2
+3-r: c)4
+case [1,2,3] of ...
+
+1:2:[3] -> (x=1,y=2,zs=[3]) ->1+2+1 =4
+                    zs é o tamanho da lista = 1 elemento
+
+5-r: a)[2,4,6]
+let f = map (+1) . filter odd
+  in [1,2,3,4,5]
+
+primeiro o filter -> [1,3,5]
+depois o map -> [2,4,6]
+
+-parte 2:
+type Item ? 
+type Quantidade ?
+type Preco ?
+
+type Produto = Item Quantidade Preco 
+
+
+--6-a)
+valorPedido :: Pedido -> Double
+valorPedido (itens _) = sum(map (\(_,q,p)-> p * (fromIntegral q)) itens)
+--6-b)
+pedidosPagos :: Sistema -> Sistema
+pedidosPagos = filter (\(_,s) -> s == Pago)
+--6-c)
+
+--6-d)
+
+--6-e)
+aplicaDesconto :: Double -> Pedido -> Pedido 
+aplicaDesconto d (itens,s) = let itens' = map(\(p,q,pr) -> (p,q,pr * (1-d))) itens 
+                            in (itens' ,s) 
