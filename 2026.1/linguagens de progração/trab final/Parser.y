@@ -1,3 +1,4 @@
+------------*apagar esta linha antes de compilar*  usar o happy para compilar para '.hs'
 {
 module Parser
 import Lexer
