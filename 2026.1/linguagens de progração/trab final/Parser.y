@@ -1,4 +1,4 @@
-------------*apagar esta linha antes de compilar*  usar o happy para compilar para '.hs'
+------------*apagar esta linha antes de compilar*  usar o happy para compilar para '.hs' (para compilar o Parser.y (no terminal): $ happy Parser.y)
 {
 module Parser
 import Lexer
