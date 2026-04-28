@@ -25,4 +25,3 @@ Exp : Num           { Num $1 }
 parseError :: [Token] -> a 
 parseError _ = error "Erro sintatico"
 }
-
