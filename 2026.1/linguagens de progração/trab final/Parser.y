@@ -1,5 +1,5 @@
 {
-module Parser
+module Parser where 
 import Lexer
 }
 
@@ -8,20 +8,24 @@ import Lexer
 %error { parseError }
 
 %token 
-    num     { Token $$ }
-    '+'     { TokSoma }
-    '*'     { TokMult }
-    '('     { TokAbrePar }
-    ')'     { TokFechaPar }
+    num         { TokNum $$ }
+    '+'         { TokSoma }
+    '*'         { TokMult }
+    '('         { TokAbrePar }
+    ')'         { TokFechaPar }
 
-%%
+-- o operador mais a baixo tem mais prioridade
+%left '+'
+%left '*' 
 
-Exp : Num           { Num $1 }
-    | Exp '+' Exp   { Soma $1 $3 }
-    | Exp '*' Exp   { Mult $1 $3 }
-    | '(' Exp ')'   { $2 }
+%% 
+
+Exp : num               { Num $1 }
+    | Exp '+' Exp       { Soma $1 $3 }
+    | Exp '*' Exp       { Mult $1 $3 }
+    | '(' Exp ')'       { $2 }
 
 {
 parseError :: [Token] -> a 
-parseError _ = error "Erro sintatico"
+parseError _ = error "Erro sintático!"
 }
