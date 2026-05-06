@@ -1,3 +1,5 @@
+trab final:
+
 -para compilar o Parser.y (no terminal): $ happy Parser.y
 
 -no ghci: parser $ lexer "2 + 3 + 4"  
